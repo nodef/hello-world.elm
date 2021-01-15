@@ -1,32 +1,22 @@
-A "Hello, World!" in an introductory computer program.
-:package: [Central](https://search.maven.org/artifact/io.github.javaf/hello-world),
-:scroll: [Releases](https://repo1.maven.org/maven2/io/github/javaf/hello-world/),
-:octocat: [GitHub](https://github.com/javaf/hello-world/packages/573464),
-:frog: [Bintray](https://bintray.com/beta/#/bintray/jcenter/io.github.javaf:hello-world),
-:peacock: [MvnRepository](https://mvnrepository.com/artifact/io.github.javaf/hello-world),
-:newspaper: [Javadoc](https://javaf.github.io/hello-world/),
-:blue_book: [Wiki](https://github.com/javaf/hello-world/wiki).
+A "Hello, World!" in an introductory computer program.<br>
+:package: [Package](https://package.elm-lang.org/packages/elmw/hello-world/latest/),
+:blue_book: [Wiki](https://github.com/elmw/hello-world/wiki).
 
 <br>
 
 Consider this as a template to:
-- Write Maven project.
-- Create test cases.
-- Set up [package information](pom.xml).
-- Set up [global settings](global/settings.xml).
-- Auto generate sources, javadoc JAR.
-- Auto sign package with GPG.
-- Auto publish javadoc to `gh-pages`.
-- Auto deploy to Maven Central Respository.
-- Auto deploy to GitHub Package registry.
+- Write elm project.
+- TODO: Create test cases.
+- Set up [package information](elm.json).
+- TODO: Auto publish package.
 - TODO: Auto update package version.
 
 <br>
 
 ```java
 ## OUTPUT
-What clothing does a house wear?
-<your answer>
+[ Your name ] <Say>
+Hello name!
 ```
 
 <br>
@@ -35,4 +25,7 @@ What clothing does a house wear?
 
 ## References
 
+- [An Introduction to Elm](https://guide.elm-lang.org)
+- [Text Fields](https://guide.elm-lang.org/architecture/text_fields.html)
+- [Documentation Format](https://package.elm-lang.org/help/documentation-format)
 - [The basic steps to publish a package with Elm 0.19](https://korban.net/posts/elm/2018-10-02-basic-steps-publish-package-elm-19/)
