@@ -1,4 +1,9 @@
-module Main exposing (..)
+module Main exposing (main)
+{-|
+A "Hello, World!" in an introductory computer program.
+@docs main
+-}
+
 import Browser
 import Html exposing (Html, div, text, input, button)
 import Html.Attributes exposing (placeholder)
@@ -7,6 +12,11 @@ import Html.Events exposing (onInput, onClick)
 
 
 -- MAIN
+{-|
+Start application with model, update & view (MVC).
+
+  main
+-}
 main: Program () Model Msg
 main = 
   Browser.sandbox {init = init, update = update, view = view}
