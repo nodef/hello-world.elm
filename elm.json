@@ -1,9 +1,9 @@
 {
     "type": "package",
     "name": "elmw/hello-world",
-    "summary": "A \"Hello, World!\" in an introductory computer program.",
+    "summary": "A \"Hello, World!\" is an introductory computer program.",
     "license": "MIT",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "exposed-modules": [
         "Main"
     ],

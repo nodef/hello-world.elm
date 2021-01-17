@@ -1,4 +1,4 @@
-A "Hello, World!" in an introductory computer program.<br>
+A "Hello, World!" is an introductory computer program.<br>
 :package: [Package](https://package.elm-lang.org/packages/elmw/hello-world/latest/).
 
 <br>
