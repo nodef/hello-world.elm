@@ -3,7 +3,7 @@
     "name": "elmw/hello-world",
     "summary": "A \"Hello, World!\" in an introductory computer program.",
     "license": "MIT",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "exposed-modules": [
         "Main"
     ],
