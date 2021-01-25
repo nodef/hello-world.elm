@@ -1,68 +1,150 @@
-module Main exposing (main)
+module Main exposing (
+    eq, imply,
+    eqv, imp,
+    and, and0, and1, and2
+  )
 {-|
-A "Hello, World!" in an introductory computer program.
-@docs main
+A "Hello, World!" is an introductory computer program.\
+📦 [Package](https://package.elm-lang.org/packages/elmw/hello-world/latest/),
+📘 [Wiki](https://github.com/elmw/hello-world/wiki).
+@docs eq, imply
+@docs eqv, imp
+@docs and, and0, and1, and2
 -}
 
-import Browser
-import Html exposing (Html, div, text, input, button)
-import Html.Attributes exposing (placeholder)
-import Html.Events exposing (onInput, onClick)
+-- import Maybe exposing (withDefault)
+-- import List exposing (length)
 
 
 
--- MAIN
+
+-- EQ, IMPLY (FIXED)
 {-|
-Start application with model, update & view (MVC).
-
-  main
+Check if antecedent ⇔ consequent (a ⇔ b).
+[📘](https://github.com/elmw/hello-world/wiki/eq)
+    -- eq a b
+    -- a: antecedent
+    -- b: consequent
+    eq True True   == True
+    eq False False == True
+    eq True False  == False
+    eq False True  == False
 -}
-main: Program () Model Msg
-main = 
-  Browser.sandbox {init = init, update = update, view = view}
+eq : Bool -> Bool -> Bool
+eq a b =
+  a == b
+
+
+{-|
+Check if antecedent ⇒ consequent (a ⇒ b).
+[📘](https://github.com/elmw/hello-world/wiki/imply)
+    -- imply a b
+    -- a: antecedent
+    -- b: consequent
+    imply True True   == True
+    imply False True  == True
+    imply False False == True
+    imply True False  == False
+-}
+imply : Bool -> Bool -> Bool
+imply a b =
+  not a || b
 
 
 
--- MODEL
-type alias Model = {
-    name: String,
-    say: String
-  }
 
-init: Model
-init =
-  Model "" ""
-
-
-
--- UPDATE
-type Msg =
-  Name String |
-  Say
-
-update : Msg -> Model -> Model
-update msg model =
-  let {name, say} = model in
-  case msg of
-    Name x ->
-      Model x say
-    Say ->
-      Model name name
+-- EQV, IMP (SHORTCUTS)
+{-|
+Check if antecedent ⇔ consequent (a ⇔ b).
+[📘](https://github.com/elmw/hello-world/wiki/eqv)
+    -- eqv a b
+    -- a: antecedent
+    -- b: consequent
+    eqv True True   == True
+    eqv False False == True
+    eqv True False  == False
+    eqv False True  == False
+-}
+eqv : Bool -> Bool -> Bool
+eqv = eq
 
 
+{-|
+Check if antecedent ⇒ consequent (a ⇒ b).
+[📘](https://github.com/elmw/hello-world/wiki/imp)
+    -- imp a b
+    -- a: antecedent
+    -- b: consequent
+    imp True True   == True
+    imp False True  == True
+    imp False False == True
+    imp True False  == False
+-}
+imp : Bool -> Bool -> Bool
+imp = imply
 
--- VIEW
-view : Model -> Html Msg
-view model =
-  let {name, say} = model in
-  div [] [
-    div [] [
-      input [placeholder "Your name", onInput Name] [],
-      button [onClick Say] [text "Say"]
-    ],
-    div [] [
-      text "Hello ",
-      text say,
-      text "!"
-    ]
-  ]
+
+
+
+-- AND (VARIABLE)
+{-|
+Check if all values are true.
+[📘](https://github.com/elmw/hello-world/wiki/and)
+    -- and[n] a b ...
+    -- a: 1st boolean
+    -- b: 2nd boolean
+    and True True             == True
+    and True False            == False
+    and4 True True True True  == True
+    and4 True False True True == False
+-}
+and : Bool -> Bool -> Bool
+and = and2
+
+
+{-|
+Check if all values are true.
+[📘](https://github.com/elmw/hello-world/wiki/and)
+    -- and[n] a b ...
+    -- a: 1st boolean
+    -- b: 2nd boolean
+    and True True             == True
+    and True False            == False
+    and4 True True True True  == True
+    and4 True False True True == False
+-}
+and0 : Bool
+and0 =
+  True
+
+
+{-|
+Check if all values are true.
+[📘](https://github.com/elmw/hello-world/wiki/and)
+    -- and[n] a b ...
+    -- a: 1st boolean
+    -- b: 2nd boolean
+    and True True             == True
+    and True False            == False
+    and4 True True True True  == True
+    and4 True False True True == False
+-}
+and1 : Bool -> Bool
+and1 a =
+  a
+
+
+{-|
+Check if all values are true.
+[📘](https://github.com/elmw/hello-world/wiki/and)
+    -- and[n] a b ...
+    -- a: 1st boolean
+    -- b: 2nd boolean
+    and True True             == True
+    and True False            == False
+    and4 True True True True  == True
+    and4 True False True True == False
+-}
+and2 : Bool -> Bool -> Bool
+and2 a b =
+  a && b
