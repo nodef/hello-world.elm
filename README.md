@@ -1,5 +1,6 @@
 A "Hello, World!" is an introductory computer program.<br>
 :package: [Package](https://package.elm-lang.org/packages/elmw/hello-world/latest/).
+:blue_book: [Wiki](https://github.com/elmw/hello-world/wiki).
 
 <br>
 
@@ -17,27 +18,27 @@ Consider this as a template to:
 ```elm
 import Main exposing (..)
 
-4 + 3
--- 7
+imply True False
+-- False
 
-19 + 48
--- 67
-
-831 + 111
--- 942
+eq False False
+-- True
 ```
-
 <br>
 <br>
 
 
 ## Index
 
-| Method | Action                                             |
-| ------ | -------------------------------------------------- |
-| [main] | Start application with model, update & view (MVC). |
+| Method   | Action                                |
+| -------- | ------------------------------------- |
+| [and]    | Check if all values are true.         |
+| [eq]     | Check if antecedent ⇔ consequent.     |
+| [imply]  | Check if antecedent ⇒ consequent.     |
 
-[main]: https://package.elm-lang.org/packages/elmw/hello-world/latest/Main#main
+[and]: https://github.com/elmw/extra-boolean/wiki/and
+[eq]: https://github.com/elmw/extra-boolean/wiki/eq
+[imply]: https://github.com/elmw/extra-boolean/wiki/imply
 
 <br>
 <br>
@@ -53,4 +54,4 @@ import Main exposing (..)
 <br>
 <br>
 
-[![](https://img.youtube.com/vi/9WkZT0YMZ70/maxresdefault.jpg)](https://www.youtube.com/watch?v=9WkZT0YMZ70)
+[![](https://img.youtube.com/vi/qNS2jj2w-GI/maxresdefault.jpg)](https://www.youtube.com/watch?v=qNS2jj2w-GI)
