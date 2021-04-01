@@ -2,28 +2,9 @@ language: elm
 if: branch = main
 
 install:
-- git clone https://${GITHUB_TOKEN}@github.com/elmw/deploy "$HOME/deploy"
-- chmod 777 "$HOME/deploy/"*.sh
-- bash "$HOME/deploy/install.sh"
-# SSH credentials
-# - cp "$dir/.ssh"/* "$HOME/.ssh/"
-# - chmod 400 "$HOME/.ssh/id_rsa"
-# - chmod 777 "$dir"/*.sh
-# Update Git to use SSH
-# - export remote="$(git remote get-url origin)"
-# - export repo="${remote:19}"
-# - git remote set-url origin git@github.com:$repo
+- if [[ "$GITHUB_TOKEN" != "" ]]; then git clone https://${GITHUB_TOKEN}@github.com/elmw/deploy "$HOME/deploy"; fi
+- if [[ -d ~/deploy ]]; then bash "$HOME/deploy/install.sh"; fi
 
 script:
-- bash "$HOME/deploy/script.sh"
-# Query
-# - export name=$(node "$dir/json.js" "elm.json" name)
-# - export version=$(node "$dir/json.js" "elm.json" version)
-# Test
-# - echo "Testing $name@$version ..."
-# - elm-test || exit 1
-# Publish
-# - echo "Publishing $name@$version ..."
-# - git tag -a $version -m "$version"
-# - git push origin $version
-# - elm publish
+- if [[ ! -d "$HOME/deploy" ]]; then elm-test; fi
+- if [[ -d "$HOME/deploy" ]]; then bash "$HOME/deploy/script.sh"; fi
